@@ -4,16 +4,20 @@
   "description": "Applied typeScript to express project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx tsc",
+    "start": "npx tsc && node dist/index.js"
   },
   "author": "Utkarsh Gangwar",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.6",
     "express": "^5.2.1"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.5",
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
+    "nodemon": "^3.1.14",
     "typescript": "^5.9.3"
   }
 }
