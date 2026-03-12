@@ -4,7 +4,7 @@ import cors from "cors";
 import { petRouter } from "./routes/pets.routes";
 import type { Request, Response } from 'express';
 
-import { pets, Pet } from "./data/pets";
+// import { pets, Pet } from "./data/pets";
 
 const PORT: number = 8000;
 const app: Express = express();
