@@ -1,5 +1,6 @@
 import type { Request, Response, NextFunction } from "express"
 
+// validate middleware
 export const validateNumericId = (
     req: Request<{id: string}>, 
     res: Response<{message: string}>, 
@@ -13,6 +14,7 @@ export const validateNumericId = (
     }
 }
 
+// auth middleware
 export const pleaseAuth = (
     req: Request<{}, undefined, {}, {password: string}>,
     res: Response,
