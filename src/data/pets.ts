@@ -1,3 +1,4 @@
+// Type Pet
 export type Pet = {
   id: number
   name: string,
@@ -15,6 +16,7 @@ export type Pet = {
   adoptionDate?: Date
 }
 
+// data for pets
 export const pets: Pet[] = [  
     {  
         id: 1,  
