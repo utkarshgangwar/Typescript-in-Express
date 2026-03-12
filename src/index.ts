@@ -12,6 +12,7 @@ const app: Express = express();
 app.use(cors());
 app.use('/pets', petRouter);
 
+// not defined routes 404 handle
 app.use((req: Request, res: Response<{message: string}>): void => {
     res.status(400).json({message: "Endpoing not found"});
 })
