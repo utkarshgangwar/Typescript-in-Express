@@ -6,13 +6,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const pets_routes_1 = require("./routes/pets.routes");
+const worker_routes_1 = require("./routes/worker.routes");
 const PORT = 8000;
 const app = (0, express_1.default)();
+// handle cross origin request
 app.use((0, cors_1.default)());
 app.use('/pets', pets_routes_1.petRouter);
+app.use('/workers', worker_routes_1.workerRouter);
+// not defined routes 404 handle
 app.use((req, res) => {
     res.status(400).json({ message: "Endpoing not found" });
 });
+// start server
 app.listen(PORT, () => {
     console.log("Listening on port: ", PORT);
 });
