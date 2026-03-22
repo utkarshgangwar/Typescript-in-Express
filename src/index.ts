@@ -1,8 +1,8 @@
 import express from "express";
 import type { Express } from "express";
 import cors from "cors";
-import { petRouter } from "./routes/pets.routes";
-import { workerRouter } from "./routes/worker.routes";
+import { petRouter } from "./routes/pets.routes.js";
+import { workerRouter } from "./routes/worker.routes.js";
 import type { Request, Response } from 'express';
 
 const PORT: number = 8000;

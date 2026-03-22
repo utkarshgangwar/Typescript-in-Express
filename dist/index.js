@@ -1,18 +1,13 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const cors_1 = __importDefault(require("cors"));
-const pets_routes_1 = require("./routes/pets.routes");
-const worker_routes_1 = require("./routes/worker.routes");
+import express from "express";
+import cors from "cors";
+import { petRouter } from "./routes/pets.routes.js";
+import { workerRouter } from "./routes/worker.routes.js";
 const PORT = 8000;
-const app = (0, express_1.default)();
+const app = express();
 // handle cross origin request
-app.use((0, cors_1.default)());
-app.use('/pets', pets_routes_1.petRouter);
-app.use('/workers', worker_routes_1.workerRouter);
+app.use(cors());
+app.use('/pets', petRouter);
+app.use('/workers', workerRouter);
 // not defined routes 404 handle
 app.use((req, res) => {
     res.status(400).json({ message: "Endpoing not found" });

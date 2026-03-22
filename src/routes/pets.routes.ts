@@ -1,7 +1,7 @@
 import express from "express";
 import type { Router } from 'express';
-import { getPetById, getPets } from "../controllers/pets.controllers";
-import { validateNumericId, pleaseAuth } from "../middleware/pets.middleware";
+import { getPetById, getPets } from "../controllers/pets.controllers.js";
+import { validateNumericId, pleaseAuth } from "../middleware/pets.middleware.js";
 
 export const petRouter: Router = express.Router();
 

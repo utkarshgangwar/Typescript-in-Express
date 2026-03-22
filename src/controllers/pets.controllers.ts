@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
-import type { Pet } from '../data/pets';
-import { pets } from "../data/pets";
+import type { Pet } from '../data/pets.js';
+import { pets } from "../data/pets.js";
 
 export type PetQueryParams = {
     species?: string

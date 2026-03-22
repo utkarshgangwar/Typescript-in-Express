@@ -3,21 +3,26 @@
   "version": "1.0.0",
   "description": "Applied typeScript to express project",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "npx tsc",
     "start": "npx tsc && node dist/index.js",
-    "start-worker": "npx tsc && node dist/index-eight-workers.js"
+    "start-worker": "npx tsc && node dist/index-eight-workers.js",
+    "start-cluster": "npx tsc && node dist/primary-cluster.js",
+    "start-load-test": "npx loadtest -n 1200 -c 400 -k http://localhost:8002/cluster/heavy"
   },
   "author": "Utkarsh Gangwar",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.6",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "pm2": "^6.0.14"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.5",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
+    "loadtest": "^8.2.1",
     "nodemon": "^3.1.14",
     "typescript": "^5.9.3"
   }
